@@ -10,6 +10,13 @@ context:
 apply-kubernetes: context
 	minikube kubectl apply -f ./kubernetes
 
+apply-istio-operator: context
+	istioctl x precheck
+	istioctl install -f ./istio/istio-operator.yaml --dry-run
+	istioctl install -f ./istio/istio-operator.yaml
+	istioctl verify-install -f ./istio/istio-operator.yaml
+	istioctl tag set stable --revision 1-13-9
+
 apply-istio: context
 	minikube kubectl apply -f ./istio
 
