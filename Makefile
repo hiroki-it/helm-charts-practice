@@ -9,6 +9,9 @@ context:
 apply-kubernetes: context
 	kubectl apply -f ./kubernetes
 
+apply-istio: context
+	kubectl apply -f ./istio
+
 install-tools:
 	minikube ssh -- "sudo apt-get update -y && sudo apt-get install -y tcptraceroute"
 
