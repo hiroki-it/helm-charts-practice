@@ -5,6 +5,7 @@ start:
 
 context:
 	kubectx minikube
+	kubectx
 
 apply-kubernetes: context
 	kubectl apply -f ./kubernetes
