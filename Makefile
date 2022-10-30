@@ -1,4 +1,4 @@
-.PHONY: start context deploy install-tools
+.PHONY: start context apply-kubernetes apply-istio-operator apply-istio service-discovery-by-kube-proxy install-tools
 
 start:
 	minikube start --memory 8192 --cpus 8 --nodes 2
