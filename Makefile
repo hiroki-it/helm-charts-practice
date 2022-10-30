@@ -23,5 +23,5 @@ apply-istio: context
 install-tools:
 	minikube ssh -- "sudo apt-get update -y && sudo apt-get install -y tcptraceroute"
 
-service-discovery-by-kube-proxy:
+service-discovery-by-kube-proxy: context
 	minikube ssh -- sudo iptables -nL KUBE-SERVICES -t nat --line-number
