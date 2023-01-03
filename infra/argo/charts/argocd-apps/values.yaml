@@ -1,0 +1,28 @@
+applications:
+  - name: root-application
+    namespace: argocd
+    project: prd
+    source:
+      repoURL: https://github.com/hiroki-it/kubernetes-network-practice.git
+      targetRevision: main
+      path: ./charts/argocd
+      helm:
+        valueFiles:
+          - values.yaml
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: argocd
+
+
+projects:
+  - name: prd
+    namespace: argocd
+    description: prd
+    sourceRepos:
+      - '*'
+    destinations:
+      - server: https://kubernetes.default.svc
+        namespace: '*'
+    clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
