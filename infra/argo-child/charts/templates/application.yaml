@@ -4,15 +4,16 @@ metadata:
   namespace: argocd
   name: istio-application
 spec:
-  project: default
+  project: {{ .Values.global.env }}
   source:
     source:
       repoURL: https://github.com/hiroki-it/helm-charts-practice.git
       targetRevision: main
-      path: ./infra/charts/istio
+      path: ./infra/charts
       helm:
         valueFiles:
-          - ./values/values-prd.yaml
+          - ./values/values-{{ .Values.global.env }}.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
+---
