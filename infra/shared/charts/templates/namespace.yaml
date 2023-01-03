@@ -4,3 +4,4 @@ metadata:
   name: app
   labels:
     istio.io/rev: stable
+    app.kubernetes.io/env: {{ .Values.global.env }}
