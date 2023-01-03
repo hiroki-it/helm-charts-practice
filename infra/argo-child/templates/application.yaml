@@ -9,7 +9,7 @@ spec:
     source:
       repoURL: https://github.com/hiroki-it/helm-charts-practice.git
       targetRevision: main
-      path: ./infra/charts
+      path: ./infra/istio
       helm:
         valueFiles:
           - ./values/values-{{ .Values.global.env }}.yaml
