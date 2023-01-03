@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: nginx-service
   namespace: app
+  labels:
+    app.kubernetes.io/env: {{ .Values.global.env }}
 spec:
   selector:
     app: nginx

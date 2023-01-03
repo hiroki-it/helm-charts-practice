@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: nginx-deployment
   namespace: app
+  labels:
+    app.kubernetes.io/env: {{ .Values.global.env }}
 spec:
   replicas: 3
   selector:
