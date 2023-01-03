@@ -8,17 +8,17 @@ context:
 	kubectx
 
 apply-kubernetes: context
-	minikube kubectl apply -f ./kubernetes
+	minikube kubectl apply -f ./infra/kubernetes
 
 apply-istio-operator: context
 	istioctl x precheck
-	istioctl install -f ./istio/istio-operator.yaml --dry-run
-	istioctl install -f ./istio/istio-operator.yaml
-	istioctl verify-install -f ./istio/istio-operator.yaml
+	istioctl install -f ./infra/istio/istio-operator.yaml --dry-run
+	istioctl install -f ./infra/istio/istio-operator.yaml
+	istioctl verify-install -f ./infra/istio/istio-operator.yaml
 	istioctl tag set stable --revision 1-13-9
 
 apply-istio: context
-	minikube kubectl apply -f ./istio
+	minikube kubectl apply -f ./infra/istio
 
 install-tools:
 	minikube ssh -- "sudo apt-get update -y && sudo apt-get install -y tcptraceroute"
