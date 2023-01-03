@@ -1,5 +1,10 @@
 apiVersion: install.istio.io/v1alpha1
 kind: IstioOperator
+metadata:
+  name: istio-operator
+  namespace: istio
+  labels:
+    app.kubernetes.io/env: { { .Values.global.env } }
 spec:
   revision: 1-13-9
   profile: demo

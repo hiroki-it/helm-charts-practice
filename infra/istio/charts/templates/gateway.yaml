@@ -3,6 +3,8 @@ kind: Gateway
 metadata:
   name: nginx-gateway
   namespace: app
+  labels:
+    app.kubernetes.io/env: {{ .Values.global.env }}
 spec:
   selector:
     istio: ingressgateway
