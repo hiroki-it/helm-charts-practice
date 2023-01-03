@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  namespace: argocd
+  name: istio-application
+spec:
+  project: default
+  source:
+    source:
+      repoURL: https://github.com/hiroki-it/helm-charts-practice.git
+      targetRevision: main
+      path: ./infra/charts/istio
+      helm:
+        valueFiles:
+          - ./values/values-prd.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
