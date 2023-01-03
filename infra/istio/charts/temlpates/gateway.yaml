@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1beta1
 kind: Gateway
 metadata:
   name: nginx-gateway
-  namespace: nginx
+  namespace: app
 spec:
   selector:
     istio: ingressgateway
