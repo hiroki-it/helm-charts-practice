@@ -1,4 +1,4 @@
-# kubernetes-network-practice
+# helm-charts-practice
 
 本リポジトリは、ArgoCDを使用してチャートをデプロイし、チャートの技術を学習するリポジトリです。
 
