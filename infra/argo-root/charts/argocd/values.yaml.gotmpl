@@ -1,6 +1,6 @@
 global:
   additionalLabels:
-    app.kubernetes.io/env: prd
+    app.kubernetes.io/env: {{ .Environment.Name }}
   logging:
     level: warn
 

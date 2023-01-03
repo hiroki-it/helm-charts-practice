@@ -9,4 +9,7 @@ releases:
     version: 5.16.3
     atomic: true
     values:
-      - ../charts/argo-cd/values.yaml
+      - ../charts/argocd/values.yaml.gotmpl
+
+environments:
+  prd:

@@ -1,14 +1,14 @@
 applications:
   - name: root-application
     namespace: argocd
-    project: prd
+    project: {{ .Environment.Name }}
     source:
       repoURL: https://github.com/hiroki-it/kubernetes-network-practice.git
       targetRevision: main
-      path: ./charts/argocd
+      path: ./infra/argo-child/charts
       helm:
         valueFiles:
-          - values.yaml
+          - values-{{ .Environment.Name }}.yaml
     destination:
       server: https://kubernetes.default.svc
       namespace: argocd

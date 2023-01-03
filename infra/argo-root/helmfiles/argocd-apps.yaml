@@ -9,4 +9,7 @@ releases:
     version: 0.0.6
     atomic: true
     values:
-      - ../charts/argocd-apps/values.yaml
+      - ../charts/argocd-apps/values.yaml.gotmpl
+
+environments:
+  prd:
