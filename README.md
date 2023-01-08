@@ -4,9 +4,37 @@
 
 ついでに、ディレクトリの構成方法も学習します。
 
-# ArgoCDのダッシュボード
+# セットアップ
 
-返却されるURLにアクセスします。
+## Minikube
+
+Minikubeを起動する。
+
+```bash
+$ minikube start --memory 8192 --cpus 8 --nodes 2
+```
+
+## ArgoCD
+
+### デプロイ
+
+```bash
+$ cd infra/argo-root
+$ helmfile -e dev -f helmfile.d/argocd.yaml diff
+$ helmfile -e dev -f helmfile.d/argocd.yaml apply
+```
+
+```bash
+$ cd infra/argo-root
+$ helmfile -e dev -f helmfile.d/argocd-apps.yaml diff
+$ helmfile -e dev -f helmfile.d/argocd-apps.yaml apply
+```
+
+### ダッシュボードへのアクセス
+
+dev環境では、追加で作成しているNodePort Serviceを介して、ArgoCDのダッシュボードに接続する。
+
+返却されるURLにアクセスする。
 
 ```bash
 $ minikube service argocd-server --url -n argocd
