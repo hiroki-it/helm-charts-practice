@@ -10,9 +10,8 @@ releases:
     atomic: true
     values:
       - ../charts/argocd/values.yaml.gotmpl
+      - ../charts/argocd/values-{{ .Environment.Name }}.yaml
 
 environments:
   prd:
   dev:
-    values:
-      - ../charts/argocd/values-dev.yaml

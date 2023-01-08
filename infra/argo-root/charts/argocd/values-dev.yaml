@@ -1,11 +1,20 @@
-# Minikubeを使用するdev環境では、追加でNodePort Serviceも作成する。
-server:
-  service:
-    type: NodePort
-    nodePortHttp: 30080
-    nodePortHttps: 30443
-    servicePortHttp: 80
-    servicePortHttps: 443
-    servicePortHttpName: http
-    servicePortHttpsName: https
-    namedTargetPort: true
+extraObjects:
+  # Minikubeを使用するdev環境では、追加でNodePort Serviceも作成する。
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: extra-argocd-server
+      namespace: argocd
+    spec:
+      type: NodePort
+      ports:
+        - name: http
+          protocol: TCP
+          nodePort: 30080
+          port: 80
+          targetPort: server
+        - name: https
+          protocol: TCP
+          nodePort: 30443
+          port: 443
+          targetPort: server
