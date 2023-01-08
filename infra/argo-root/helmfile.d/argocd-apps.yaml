@@ -13,3 +13,4 @@ releases:
 
 environments:
   prd:
+  dev:
