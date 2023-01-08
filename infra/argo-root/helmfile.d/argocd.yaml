@@ -13,3 +13,6 @@ releases:
 
 environments:
   prd:
+  dev:
+    values:
+      - ../charts/argocd/values-dev.yaml
