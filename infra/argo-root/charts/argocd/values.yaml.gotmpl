@@ -10,13 +10,8 @@ applicationSet:
 notifications:
   enabled: false
 
-secrets:
-  secret:
-    createSecret: false
-
 server:
   containerPort: 8080
   ingress:
     enabled: true
-    annotations:
-      kubernetes.io/ingress.class: nginx
+    ingressClassName: nginx
