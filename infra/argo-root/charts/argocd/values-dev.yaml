@@ -12,9 +12,11 @@ extraObjects:
           protocol: TCP
           nodePort: 30080
           port: 80
+          targetPort: server
         - name: https
           protocol: TCP
           nodePort: 30443
           port: 443
+          targetPort: server
       selector:
         app.kubernetes.io/name: argocd-server
