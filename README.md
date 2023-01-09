@@ -37,11 +37,8 @@ ArgoCDでは、[App-Of-Appsパターン](https://argo-cd.readthedocs.io/en/stabl
 
 ```yaml
 argocd-root
-├── argocd-app-parent
-│   └── argocd-app-child # アプリ領域のマイクロサービスごとのチャートをデプロイできる。
-│
-└── argocd-infra-parent
-    └── argocd-infra-child # インフラ領域のツールごとのチャートをデプロイできる
+├── argocd-app-parent # アプリ領域のマイクロサービスごとのチャートをデプロイできる。
+└── argocd-infra-parent # インフラ領域のツールごとのチャートをデプロイできる
 ```
 
 ArgoCDのルートApplication（argocd-root）のみ、ArgoCDを使用してデプロイできないため、Helmfileを使用しています。
