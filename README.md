@@ -19,13 +19,13 @@ $ minikube start --memory 8192 --cpus 8 --nodes 2
 ### デプロイ
 
 ```bash
-$ cd infra/argo-root
+$ cd platform/argocd-root
 $ helmfile -e dev -f helmfile.d/argocd.yaml diff
 $ helmfile -e dev -f helmfile.d/argocd.yaml apply
 ```
 
 ```bash
-$ cd infra/argo-root
+$ cd platform/argocd-root
 $ helmfile -e dev -f helmfile.d/argocd-apps.yaml diff
 $ helmfile -e dev -f helmfile.d/argocd-apps.yaml apply
 ```
