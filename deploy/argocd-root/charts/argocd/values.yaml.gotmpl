@@ -7,6 +7,24 @@ global:
 applicationSet:
   enabled: false
 
+configs:
+  cm:
+    url: https://localhost:8080
+    dex.config: |
+      connectors:
+        - type: github
+          id: github
+          name: argocd-sso
+          config:
+            clientID: *****
+            clientSecret: *****
+  rbac:
+    policy.default: role:readonly
+    policy.csv: |
+      p, role:org-admin, *, *, *, allow  
+      g, [email], role:org-admin
+    scopes: '[email]'
+
 notifications:
   enabled: false
 
@@ -15,3 +33,4 @@ server:
   ingress:
     enabled: true
     ingressClassName: nginx
+    https: true
