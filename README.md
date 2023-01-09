@@ -27,7 +27,9 @@
 └── infra # インフラ領域のツールごとのチャートを配置
 ```
 
-### App-Of-Appsパターン
+### ArgoCD
+
+#### App-Of-Appsパターン
 
 <img src="https://raw.githubusercontent.com/hiroki-it/helm-charts-practice/main/root-application.png" alt="root-application" style="zoom:80%;" />
 
@@ -41,6 +43,19 @@ argocd-root
 ```
 
 ArgoCDのルートApplication（argocd-root）のみ、ArgoCDを使用してデプロイできないため、Helmfileを使用しています。
+
+
+#### プロジェクト
+
+ArgoCDでは、プロジェクト名でApplicationをフィルタリングできます。
+
+これは、Applicationの選び間違えるといったヒューマンエラーを防ぐことにつながります。
+
+今現在、以下のプロジェクトを定義しています。
+
+- root
+- app
+- infra
 
 <br>
 
