@@ -6,7 +6,7 @@ metadata:
   labels:
     app.kubernetes.io/env: {{ .Values.global.env }}
 spec:
-  project: {{ .Values.global.env }}
+  project: app
   source:
     repoURL: https://github.com/hiroki-it/helm-charts-practice.git
     targetRevision: main

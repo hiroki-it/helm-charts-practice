@@ -6,7 +6,7 @@ metadata:
   labels:
     app.kubernetes.io/env: {{ .Values.global.env }}
 spec:
-  project: {{ .Values.global.env }}
+  project: infra
   source:
     repoURL: https://fluent.github.io/helm-charts
     chart: fluent-bit

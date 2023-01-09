@@ -1,7 +1,7 @@
 applications:
   - name: root-application
     namespace: argocd
-    project: {{ .Environment.Name }}
+    project: root
     source:
       repoURL: https://github.com/hiroki-it/kubernetes-network-practice.git
       targetRevision: main
