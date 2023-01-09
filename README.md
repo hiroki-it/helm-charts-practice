@@ -19,7 +19,7 @@
 一方で、公式チャートはチャートリポジトリ（GitHub Pagesなど）を参照しています。
 
 ```yaml
-.
+repository/
 ├── README.md
 ├── app # アプリ領域のマイクロサービスごとのユーザ定義チャートを配置
 ├── deploy
