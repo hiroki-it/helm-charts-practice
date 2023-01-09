@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   namespace: argocd
-  name: shared-application
+  name: app-shared-application
 spec:
   project: {{ .Values.global.env }}
   source:
