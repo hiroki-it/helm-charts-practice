@@ -15,9 +15,9 @@ applications:
 
 
 projects:
-  - name: prd
+  - name: {{ .Environment.Name }}
     namespace: argocd
-    description: prd
+    description: {{ .Environment.Name }}
     sourceRepos:
       - '*'
     destinations:
