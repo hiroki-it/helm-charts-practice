@@ -3,6 +3,8 @@ kind: Application
 metadata:
   namespace: argocd
   name: app-shared-application
+  labels:
+    app.kubernetes.io/env: {{ .Values.global.env }}
 spec:
   project: {{ .Values.global.env }}
   source:
