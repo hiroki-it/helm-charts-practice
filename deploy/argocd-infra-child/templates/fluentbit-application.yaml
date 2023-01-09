@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  namespace: argocd
+  name: fluentbit-application
+spec:
+  project: {{ .Values.global.env }}
+  source:
+    repoURL: https://fluent.github.io/helm-charts
+    chart: fluent-bit
+    helm:
+      values: |
+        replicaCount: 2
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
