@@ -1,4 +1,4 @@
 apiVersion: v1
 appVersion: "0.1"
-name: argocd-app-parent
+name: argocd-parent
 version: 0.1.0
