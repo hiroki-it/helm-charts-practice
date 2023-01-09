@@ -2,13 +2,15 @@
 
 ## このリポジトリについて
 
-本リポジトリは、ArgoCDを使用してチャートをデプロイし、チャートの技術を学習するリポジトリです。
+本リポジトリは、ArgoCDを使用してチャートをデプロイし、いろいろなチャートを検証するリポジトリです。
 
 ついでに、ディレクトリの構成方法も学習します。
 
 <br>
 
-## ディレクトリ構成
+## 設計ポリシー
+
+### ディレクトリ構成
 
 ディレクトリ構成は以下の通りとします。
 
@@ -25,6 +27,11 @@
 │
 └── infra # インフラ領域のツールごとのチャートを配置
 ```
+
+### App-Of-Appsパターン
+
+<img src="https://raw.githubusercontent.com/hiroki-it/helm-charts-practice/main/root-application.png" alt="root-application" style="zoom:80%;" />
+
 
 ArgoCDでは、App-Of-Appsパターンを採用しており、以下のようなApplication構成になっています。
 
