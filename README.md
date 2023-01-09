@@ -38,6 +38,8 @@ argocd-root
     └── argocd-infra-child # インフラ領域のツールごとのチャートをデプロイできる
 ```
 
+ArgoCDのルートApplication（argocd-root）のみ、ArgoCDを使用してデプロイできないため、Helmfileを使用しています。
+
 <br>
 
 ## セットアップ
