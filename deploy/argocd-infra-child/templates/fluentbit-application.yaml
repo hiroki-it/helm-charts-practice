@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://fluent.github.io/helm-charts
     chart: fluent-bit
-    targetRevision: 0.3.9
+    targetRevision: fluentd-0.3.9
     helm:
       values: |
         replicaCount: 2
