@@ -6,13 +6,12 @@ metadata:
 spec:
   project: {{ .Values.global.env }}
   source:
-    source:
-      repoURL: https://github.com/hiroki-it/helm-charts-practice.git
-      targetRevision: main
-      path: ./app/helloworld
-      helm:
-        valueFiles:
-          - ./values/values-{{ .Values.global.env }}.yaml
+    repoURL: https://github.com/hiroki-it/helm-charts-practice.git
+    targetRevision: main
+    path: ./app/helloworld
+    helm:
+      valueFiles:
+        - ./values/values-{{ .Values.global.env }}.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
