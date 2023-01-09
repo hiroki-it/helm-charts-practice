@@ -16,4 +16,4 @@ spec:
         - ./values-{{ .Values.global.env }}.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: app
