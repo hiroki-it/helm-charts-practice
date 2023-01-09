@@ -16,15 +16,14 @@
 .
 ├── Makefile
 ├── README.md
-├── app # アプリ領域のマイクロサービスごとのチャート
+├── app # アプリ領域のマイクロサービスごとのチャートを配置
 ├── deploy
-│   ├── argocd-app-child     # ArgoCDのアプリ領域の子Application
-│   ├── argocd-app-parent    # ArgoCDのアプリ領域の親Application
-│   ├── argocd-infra-child   # ArgoCDのインフラ領域の子Application
-│   ├── argocd-infra-parent  # ArgoCDのインフラ領域の親Application
-│   └── argocd-root          # ArgoCDのルートApplication
+│   ├── argocd-app-child     # ArgoCDのアプリ領域の子Applicationを配置
+│   ├── argocd-infra-child   # ArgoCDのインフラ領域の子Applicationを配置
+│   ├── argocd-parent        # ArgoCDの親Applicationを配置
+│   └── argocd-root          # ArgoCDのルートApplicationを配置
 │
-└── infra # インフラ領域のツールごとのチャート
+└── infra # インフラ領域のツールごとのチャートを配置
 ```
 
 ArgoCDでは、App-Of-Appsパターンを採用しており、以下のようなApplication構成になっています。
