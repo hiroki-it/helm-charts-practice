@@ -4,7 +4,7 @@ metadata:
   name: istio-operator
   namespace: istio-system
   labels:
-    app.kubernetes.io/env: { { .Values.global.env } }
+    app.kubernetes.io/env: {{ .Values.global.env }}
 spec:
   revision: 1-13-9
   profile: demo
