@@ -14,17 +14,21 @@
 
 ディレクトリ構成は以下の通りとします。
 
+ユーザ定義のチャートは、```app```ディレクトリと```infra```ディレクトリ配下に配置しています。
+
+一方で、公式チャートはチャートリポジトリ（GitHub Pagesなど）を参照しています。
+
 ```yaml
 .
 ├── README.md
-├── app # アプリ領域のマイクロサービスごとのチャートを配置
+├── app # アプリ領域のマイクロサービスごとのユーザ定義チャートを配置
 ├── deploy
 │   ├── argocd-app-child     # ArgoCDのアプリ領域の子Applicationを配置
 │   ├── argocd-infra-child   # ArgoCDのインフラ領域の子Applicationを配置
 │   ├── argocd-parent        # ArgoCDの親Applicationを配置
 │   └── argocd-root          # ArgoCDのルートApplicationを配置
 │
-└── infra # インフラ領域のツールごとのチャートを配置
+└── infra # インフラ領域のツールごとのユーザ定義チャートを配置
 ```
 
 ### ArgoCD
