@@ -5,7 +5,7 @@ applications:
     source:
       repoURL: https://github.com/hiroki-it/kubernetes-network-practice.git
       targetRevision: main
-      path: ./deploy/argo-parent
+      path: ./deploy/argocd-parent
       helm:
         valueFiles:
           - values-{{ .Environment.Name }}.yaml
