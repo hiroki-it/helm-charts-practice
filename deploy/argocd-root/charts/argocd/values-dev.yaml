@@ -3,7 +3,7 @@ extraObjects:
   - apiVersion: v1
     kind: Service
     metadata:
-      name: extra-argocd-server
+      name: argocd-server-for-minikube
       namespace: argocd
     spec:
       type: NodePort
