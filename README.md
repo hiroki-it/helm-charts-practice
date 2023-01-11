@@ -63,7 +63,19 @@ ArgoCDでは、プロジェクト名でApplicationをフィルタリングでき
 
 #### 認証認可
 
-GitHubと```dex-server```を組み合わせて、SSOを採用しています。
+認証認可方法には、SSOを採用しています。
+
+認証フェーズの委譲先としてGitHubを選び、GitHubへの通信時のハブとして```dex-server```を使用しています。
+
+```bash
+$ kubectl get deployment -n argocd
+
+NAME                 READY   UP-TO-DATE   AVAILABLE   AGE
+argocd-dex-server    1/1     1            1           41h # これ！
+argocd-redis         1/1     1            1           41h
+argocd-repo-server   1/1     1            1           41h
+argocd-server        1/1     1            1           41h
+```
 
 <br>
 
