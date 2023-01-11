@@ -63,7 +63,7 @@ ArgoCDでは、プロジェクト名でApplicationをフィルタリングでき
 
 #### 認証認可
 
-認証フェーズをGitHub、認可フェーズを```dex-server```とし、SSOを採用しています。
+GitHubと```dex-server```を組み合わせて、SSOを採用しています。
 
 <br>
 
