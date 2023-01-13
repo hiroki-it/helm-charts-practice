@@ -81,6 +81,12 @@ argocd-server        1/1     1            1           41h
 
 ## セットアップ
 
+### ツールのインストール
+
+```bash
+$ asdf install
+```
+
 ### Minikube
 
 #### 起動
@@ -96,13 +102,15 @@ $ minikube start --memory 8192 --cpus 8 --nodes 2
 コンテキストを切り替えます。
 
 ```bash
-kubectx minikube
-kubectx
+$ kubectx minikube
+$ kubectx
 ```
 
 #### ネットワークツールの導入
 
 マイクロサービスアーキテクチャでは、ネットワークのデバッグのために、Linuxのパッケージを使用することがあります。
+
+Minikube仮想サーバーにツールをインストールします。
 
 ```bash
 $ minikube ssh -- "sudo apt-get update -y && sudo apt-get install -y tcptraceroute"
