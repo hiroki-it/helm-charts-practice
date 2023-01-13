@@ -33,7 +33,7 @@ repository/
 
 ### ArgoCD
 
-#### App-Of-Appsパターン
+#### ▼ App-Of-Appsパターン
 
 <img src="https://raw.githubusercontent.com/hiroki-it/helm-charts-practice/main/root-application.png" alt="root-application" style="zoom:80%;" />
 
@@ -49,7 +49,7 @@ argocd-root
 ArgoCDのルートApplication（argocd-root）のみ、ArgoCDを使用してデプロイできないため、Helmfileを使用しています。
 
 
-#### プロジェクト
+#### ▼ プロジェクト
 
 ArgoCDでは、プロジェクト名でApplicationをフィルタリングできます。
 
@@ -61,7 +61,7 @@ ArgoCDでは、プロジェクト名でApplicationをフィルタリングでき
 - app
 - infra
 
-#### 認証認可
+#### ▼ 認証認可
 
 認証認可方法には、SSOを採用しています。
 
@@ -89,7 +89,7 @@ $ asdf install
 
 ### Minikube
 
-#### 起動
+#### ▼ 起動
 
 Minikubeを起動します。
 
@@ -97,7 +97,7 @@ Minikubeを起動します。
 $ minikube start --memory 8192 --cpus 8 --nodes 2
 ```
 
-#### コンテキスト
+#### ▼ コンテキスト
 
 コンテキストを切り替えます。
 
@@ -106,7 +106,7 @@ $ kubectx minikube
 $ kubectx
 ```
 
-#### ネットワークツールの導入
+#### ▼ ネットワークツールの導入
 
 マイクロサービスアーキテクチャでは、ネットワークのデバッグのために、Linuxのパッケージを使用することがあります。
 
@@ -118,7 +118,7 @@ $ minikube ssh -- "sudo apt-get update -y && sudo apt-get install -y tcptracerou
 
 ### ArgoCD
 
-#### デプロイ
+#### ▼ デプロイ
 
 ```bash
 $ cd deploy/argocd-root
@@ -132,7 +132,7 @@ $ helmfile -e dev -f helmfile.d/argocd-apps.yaml diff
 $ helmfile -e dev -f helmfile.d/argocd-apps.yaml apply
 ```
 
-#### ダッシュボードへのアクセス
+#### ▼ ダッシュボードへのアクセス
 
 dev環境では、追加で作成しているNodePort Serviceを介して、ArgoCDのダッシュボードに接続します。
 
