@@ -94,7 +94,7 @@ $ asdf install
 Minikubeを起動します。
 
 ```bash
-$ minikube start --memory 8192 --cpus 8 --nodes 2
+$ minikube start --memory 8192 --cpus 8 --nodes 4
 ```
 
 #### ▼ コンテキスト
@@ -103,7 +103,16 @@ $ minikube start --memory 8192 --cpus 8 --nodes 2
 
 ```bash
 $ kubectx minikube
-$ kubectx
+```
+
+#### ▼ ワーカーNodeの種類分け
+
+ワーカーNodeの```metadata.labels```キー配下に
+
+```bash
+$ kubectl label node minikube-m02 node.kubernetes.io/nodegroup=deploy
+$ kubectl label node minikube-m03 node.kubernetes.io/nodegroup=ingress
+$ kubectl label node minikube-m04 node.kubernetes.io/nodegroup=app
 ```
 
 #### ▼ ネットワークツールの導入
