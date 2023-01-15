@@ -18,15 +18,18 @@
 
 一方で、公式チャートはチャートリポジトリ（GitHub Pagesなど）を参照しています。
 
+複数のチャートから構成される一部のツール（Istioなど）、各チャートのリポジトリを監視する孫Applicationを用意し、これを子Applicationで管理しています。
+
 ```yaml
 repository/
 ├── README.md
 ├── app # アプリ領域のマイクロサービスごとのユーザ定義チャートを配置
 ├── deploy
-│   ├── argocd-app-child     # ArgoCDのアプリ領域の子Applicationを配置
-│   ├── argocd-infra-child   # ArgoCDのインフラ領域の子Applicationを配置
-│   ├── argocd-parent        # ArgoCDの親Applicationを配置
-│   └── argocd-root          # ArgoCDのルートApplicationを配置
+│   ├── argocd-app-child         # ArgoCDのアプリ領域の子Applicationを配置
+│   ├── argocd-infra-child       # ArgoCDのインフラ領域の子Applicationを配置
+│   ├── argocd-infra-grandchild  # ArgoCDのインフラ領域の孫Applicationを配置
+│   ├── argocd-parent            # ArgoCDの親Applicationを配置
+│   └── argocd-root              # ArgoCDのルートApplicationを配置
 │
 └── infra # インフラ領域のツールごとのユーザ定義チャートを配置
 ```
