@@ -9,7 +9,7 @@ spec:
   project: infra
   source:
     repoURL: https://istio-release.storage.googleapis.com/charts
-    chart: istio/base
+    chart: base
     targetRevision: 1.15.4
     helm:
       values: |
