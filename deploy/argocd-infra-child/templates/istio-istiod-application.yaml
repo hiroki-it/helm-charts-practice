@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  namespace: argocd
+  name: istio-istiod-application
+  labels:
+    app.kubernetes.io/env: {{ .Values.global.env }}
+spec:
+  project: infra
+  source:
+    repoURL: https://istio-release.storage.googleapis.com/charts
+    chart: istiod
+    targetRevision: 1.15.4
+    helm:
+      values: |
+        revision: "1-15-4"
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: istio-system
