@@ -17,10 +17,9 @@ spec:
           type: NodePort
           ports:
             - name: http
-          port: 80
-          targetPort: 8080
-          nodePort: 31039
-          affinity:
+              port: 80
+              targetPort: 8080
+              nodePort: 31039
         affinity:
           nodeAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
