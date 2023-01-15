@@ -34,8 +34,8 @@ configs:
     policy.default: role:readonly
     policy.csv: |
       p, role:org-admin, *, *, *, allow  
-      g, [email], role:org-admin
-    scopes: '[email]'
+      g, [github-org]:[github-team], role:org-admin
+    scopes: '[groups]'
 
 dex:
   affinity:
