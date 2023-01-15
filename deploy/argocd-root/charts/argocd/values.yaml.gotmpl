@@ -32,7 +32,6 @@ configs:
             clientSecret: *****
   rbac:
     policy.default: role:readonly
-    # メールアドレスを設定する。
     policy.csv: |
       p, role:admin, *, *, *, allow
       p, role:app, *, *, app/*, allow
