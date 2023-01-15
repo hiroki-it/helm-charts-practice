@@ -32,10 +32,11 @@ configs:
             clientSecret: *****
   rbac:
     policy.default: role:readonly
+    # メールアドレスを設定する。
     policy.csv: |
-      p, role:org-admin, *, *, *, allow  
-      g, [github-org]:[github-team], role:org-admin
-    scopes: '[groups]'
+      p, role:admin, *, *, *, allow
+      g, example@gmail.com, role:admin
+    scopes: '[email]'
 
 dex:
   affinity:
