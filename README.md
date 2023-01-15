@@ -143,10 +143,10 @@ $ helmfile -e dev -f helmfile.d/argocd-apps.yaml apply
 
 #### ▼ ダッシュボードへのアクセス
 
-dev環境では、追加で作成しているNodePort Serviceを介して、ArgoCDのダッシュボードに接続します。
+本番環境ではIngressを介してダッシュボードを介してArgoCDのPodに接続します。
 
-返却されるURLにアクセスします。
+一方で開発環境のMinikube上では、Ingressを介さずに、ArgoCDのPodに直接的に接続します。
 
 ```bash
-$ minikube service argocd-server --url -n argocd
+$ kubectl port-forward svc/argocd-server-for-minikube -n argocd 8080:443
 ```
