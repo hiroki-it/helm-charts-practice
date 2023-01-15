@@ -16,6 +16,6 @@ spec:
       route:
         - destination:
             host: helloworld-service. helloworld.svc.cluster.local
-  port:
-    number: 8080
+            port:
+              number: 8080
 
