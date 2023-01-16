@@ -34,6 +34,8 @@ repository/
 └── infra # インフラ領域のツールごとのユーザ定義チャートを配置
 ```
 
+<br>
+
 ### ArgoCD
 
 #### ▼ App-Of-Appsパターン
@@ -90,6 +92,9 @@ argocd-server        1/1     1            1           41h
 $ asdf install
 ```
 
+<br>
+
+
 ### Minikube
 
 #### ▼ 起動
@@ -110,7 +115,8 @@ $ kubectx minikube
 
 #### ▼ ワーカーNodeの種類分け
 
-ワーカーNodeの```metadata.labels```キー配下に
+node affinityのために、ワーカーNodeの```metadata.labels```キー配下にNodeの種類を表すラベルを付与します。
+
 
 ```bash
 $ kubectl label node minikube-m02 node.kubernetes.io/nodegroup=deploy
@@ -127,6 +133,9 @@ Minikube仮想サーバーにツールをインストールします。
 ```bash
 $ minikube ssh -- "sudo apt-get update -y && sudo apt-get install -y tcptraceroute"
 ```
+
+<br>
+
 
 ### ArgoCD
 
