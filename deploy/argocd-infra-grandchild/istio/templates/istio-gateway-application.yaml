@@ -12,6 +12,7 @@ spec:
     chart: gateway
     targetRevision: 1.15.4
     helm:
+      releaseName: istio-ingressgateway
       values: |
         service:
           type: NodePort
