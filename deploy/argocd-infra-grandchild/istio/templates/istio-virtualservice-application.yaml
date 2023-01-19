@@ -12,6 +12,7 @@ spec:
     targetRevision: main
     path: ./infra/istio
     helm:
+      releaseName: istio-virtualservice
       valueFiles:
         - ./values-{{ .Values.global.env }}.yaml
   destination:

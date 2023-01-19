@@ -12,6 +12,7 @@ spec:
     chart: fluent-bit
     targetRevision: 0.21.7
     helm:
+      releaseName: fluentbit
       values: |
         replicaCount: 2
 

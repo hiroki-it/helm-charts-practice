@@ -12,6 +12,7 @@ spec:
     targetRevision: main
     path: ./app/shared
     helm:
+      releaseName: app-shared
       valueFiles:
         - ./values-{{ .Values.global.env }}.yaml
   destination:

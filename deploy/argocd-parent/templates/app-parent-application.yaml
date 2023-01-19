@@ -12,6 +12,7 @@ spec:
     targetRevision: main
     path: ./deploy/argocd-app-child
     helm:
+      releaseName: app-parent
       valueFiles:
         - ./values-{{ .Values.global.env }}.yaml
   destination:

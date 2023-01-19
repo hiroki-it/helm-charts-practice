@@ -12,6 +12,7 @@ spec:
     chart: istiod
     targetRevision: 1.15.4
     helm:
+      releaseName: istio-istiod
       values: |
         revision: "1-15-4"
 

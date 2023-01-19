@@ -9,6 +9,7 @@ applications:
       targetRevision: main
       path: ./deploy/argocd-parent
       helm:
+        releaseName: root
         valueFiles:
           - values-{{ .Environment.Name }}.yaml
     destination:

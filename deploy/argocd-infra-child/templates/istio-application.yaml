@@ -12,6 +12,7 @@ spec:
     targetRevision: main
     path: ./deploy/argocd-infra-grandchild/istio
     helm:
+      releaseName: istio
       valueFiles:
         - ./values-{{ .Values.global.env }}.yaml
 

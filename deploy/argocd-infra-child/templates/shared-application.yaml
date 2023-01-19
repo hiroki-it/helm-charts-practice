@@ -12,6 +12,7 @@ spec:
     targetRevision: main
     path: ./infra/shared
     helm:
+      releaseName: infra-shared
       valueFiles:
         - ./values-{{ .Values.global.env }}.yaml
   destination:

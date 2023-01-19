@@ -12,6 +12,7 @@ spec:
     targetRevision: main
     path: ./app/helloworld
     helm:
+      releaseName: helloworld
       valueFiles:
         - ./values-{{ .Values.global.env }}.yaml
   destination:
