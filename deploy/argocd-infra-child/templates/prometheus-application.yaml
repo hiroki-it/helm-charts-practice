@@ -13,7 +13,46 @@ spec:
     targetRevision: 44.2.1
     helm:
       releaseName: kube-prometheus-stack
-
+      values: |
+        alertmanager:
+          ingress:
+            enabled: true
+            ingressClassName: nginx
+          affinity:
+            nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+                - matchExpressions:
+                    - key: node.kubernetes.io/nodegroup
+                      operator: In
+                      values:
+                        - system
+        grafana:
+          ingress:
+            enabled: true
+            ingressClassName: nginx
+          affinity:
+            nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+                - matchExpressions:
+                    - key: node.kubernetes.io/nodegroup
+                      operator: In
+                      values:
+                        - system
+        prometheus:
+          ingress:
+            enabled: true
+            ingressClassName: nginx
+          affinity:
+            nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+                - matchExpressions:
+                    - key: node.kubernetes.io/nodegroup
+                      operator: In
+                      values:
+                        - system
   destination:
     server: https://kubernetes.default.svc
     namespace: prometheus
