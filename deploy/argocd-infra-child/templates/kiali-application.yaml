@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  namespace: argocd
+  name: kiali-application
+  labels:
+    app.kubernetes.io/env: {{ .Values.global.env }}
+spec:
+  project: infra
+  source:
+    repoURL: https://kiali.org/helm-charts
+    chart: kiali-server
+    targetRevision: 44.2.1
+    helm:
+      releaseName: kiali
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: istio-system
