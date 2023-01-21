@@ -14,8 +14,13 @@ spec:
     helm:
       releaseName: jaeger
       values: |
-        allInOne:
-          enabled: true
+        agent:
+          nodeSelector:
+            node.kubernetes.io/nodegroup: app
+        collector:
+          nodeSelector:
+            node.kubernetes.io/nodegroup: system
+        query:
           ingress:
             enabled: true
             ingressClassName: nginx
