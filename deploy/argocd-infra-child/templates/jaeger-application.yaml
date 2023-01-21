@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  namespace: argocd
+  name: jaeger-application
+  labels:
+    app.kubernetes.io/env: {{ .Values.global.env }}
+spec:
+  project: infra
+  source:
+    repoURL: https://kiali.org/helm-charts
+    chart: jaeger
+    targetRevision: 0.66.1
+    helm:
+      releaseName: jaeger
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: jaeger
