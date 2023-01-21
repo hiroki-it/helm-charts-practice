@@ -6,6 +6,11 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: jaeger
+---
+apiVersion: v1
+kind: Namespace
+metadata:
   name: istio-ingress
   labels:
     # istio-proxyコンテナのインジェクションを有効化する。
