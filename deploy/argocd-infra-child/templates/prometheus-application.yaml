@@ -20,39 +20,39 @@ spec:
             ingressClassName: nginx
           affinity:
             nodeAffinity:
-        　　   requiredDuringSchedulingIgnoredDuringExecution:
-          　    nodeSelectorTerms:
-            　    - matchExpressions:
-              　      - key: node.kubernetes.io/nodegroup
-                　      operator: In
-                  　    values:
-                    　    - system
+              requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms:
+                  - matchExpressions:
+                      - key: node.kubernetes.io/nodegroup
+                        operator: In
+                        values:
+                          - system
         grafana:
           ingress:
             enabled: true
             ingressClassName: nginx
           affinity:
             nodeAffinity:
-        　　   requiredDuringSchedulingIgnoredDuringExecution:
-          　    nodeSelectorTerms:
-            　    - matchExpressions:
-              　      - key: node.kubernetes.io/nodegroup
-                　      operator: In
-                  　    values:
-                    　    - system
+              requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms:
+                  - matchExpressions:
+                      - key: node.kubernetes.io/nodegroup
+                        operator: In
+                        values:
+                          - system
         prometheus:
           ingress:
             enabled: true
             ingressClassName: nginx
           affinity:
             nodeAffinity:
-        　　   requiredDuringSchedulingIgnoredDuringExecution:
-          　    nodeSelectorTerms:
-            　    - matchExpressions:
-              　      - key: node.kubernetes.io/nodegroup
-                　      operator: In
-                  　    values:
-                    　    - system
+              requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms:
+                  - matchExpressions:
+                      - key: node.kubernetes.io/nodegroup
+                        operator: In
+                        values:
+                          - system
 
   destination:
     server: https://kubernetes.default.svc
