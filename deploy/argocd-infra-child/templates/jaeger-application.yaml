@@ -8,7 +8,7 @@ metadata:
 spec:
   project: infra
   source:
-    repoURL: https://kiali.org/helm-charts
+    repoURL: https://jaegertracing.github.io/helm-charts
     chart: jaeger
     targetRevision: 0.66.1
     helm:
