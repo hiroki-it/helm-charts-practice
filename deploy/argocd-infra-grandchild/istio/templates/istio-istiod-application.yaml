@@ -15,6 +15,9 @@ spec:
       releaseName: istio-istiod
       values: |
         revision: "1-15-4"
+        pilot:
+          nodeSelector:
+            node.kubernetes.io/nodegroup: system
 
   destination:
     server: https://kubernetes.default.svc
