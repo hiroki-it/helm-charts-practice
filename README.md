@@ -162,5 +162,5 @@ $ helmfile -e dev -f helmfile.d/argocd-apps.yaml apply
 一方で開発環境のMinikube上では、Ingressを介さずに、ArgoCDのPodに直接的に接続します。
 
 ```bash
-$ kubectl port-forward svc/argocd-server-for-minikube -n argocd 8080:443
+$ kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
