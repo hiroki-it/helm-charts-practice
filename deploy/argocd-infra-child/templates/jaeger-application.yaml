@@ -15,9 +15,11 @@ spec:
       releaseName: jaeger
       values: |
         agent:
-          nodeSelector:
-            node.kubernetes.io/nodegroup: app
+          enabled: false
         collector:
+          service:
+            zipkin:
+            port: 9411
           nodeSelector:
             node.kubernetes.io/nodegroup: system
         query:
