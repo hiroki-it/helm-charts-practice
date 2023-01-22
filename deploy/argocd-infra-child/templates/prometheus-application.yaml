@@ -32,15 +32,6 @@ spec:
           ingress:
             enabled: true
             ingressClassName: nginx
-          affinity:
-            nodeAffinity:
-              requiredDuringSchedulingIgnoredDuringExecution:
-                nodeSelectorTerms:
-                  - matchExpressions:
-                      - key: node.kubernetes.io/nodegroup
-                        operator: In
-                        values:
-                          - system
         prometheus:
           ingress:
             enabled: true
