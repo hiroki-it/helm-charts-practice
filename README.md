@@ -101,8 +101,16 @@ $ asdf install
 
 Minikubeを起動します。
 
+コンテナランタイムとして、Containerdを使用します。
+
+CPUとメモリの要求量は任意で変更します。
+
 ```bash
-$ minikube start --memory 12288 --cpus 8 --nodes 5 --container-runtime=containerd
+$ minikube start \
+    --memory 12288 \
+    --cpus 8 \
+    --nodes 5 \
+    --container-runtime=containerd
 ```
 
 #### ▼ コンテキスト
