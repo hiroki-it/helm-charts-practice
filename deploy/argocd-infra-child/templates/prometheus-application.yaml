@@ -36,7 +36,7 @@ spec:
           ingress:
             enabled: true
             ingressClassName: nginx
-          prometheusSpec
+          prometheusSpec:
             affinity:
               nodeAffinity:
                 requiredDuringSchedulingIgnoredDuringExecution:
