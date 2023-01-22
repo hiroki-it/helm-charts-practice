@@ -16,6 +16,8 @@ spec:
       values: |
         revision: "1-15-4"
         pilot:
+          {{- /* 全てのトラフィックでスパンを作成する */}}
+          traceSampling: 100.0
           nodeSelector:
             node.kubernetes.io/nodegroup: system
         global:
