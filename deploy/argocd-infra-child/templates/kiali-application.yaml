@@ -26,7 +26,7 @@ spec:
               type: basic
               username: admin
               password: prom-operator
-          prometheus
+          prometheus:
             url: http://helloworld.prometheus.com
           tracing:
             enabled: true
