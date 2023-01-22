@@ -18,6 +18,8 @@ spec:
           ingress:
             enabled: true
             ingressClassName: nginx
+            hosts:
+              - helloworld.alertmanager.com
           alertmanagerSpec:
             affinity:
               nodeAffinity:
@@ -32,10 +34,14 @@ spec:
           ingress:
             enabled: true
             ingressClassName: nginx
+            hosts:
+              - helloworld.grafana.com
         prometheus:
           ingress:
             enabled: true
             ingressClassName: nginx
+            hosts:
+              - helloworld.prometheus.com
           prometheusSpec:
             affinity:
               nodeAffinity:
