@@ -172,3 +172,37 @@ $ helmfile -e dev -f helmfile.d/argocd-apps.yaml apply
 ```bash
 $ kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
+
+<br>
+
+### Prometheus、Alertmanager、Grafana
+
+#### ▼ ダッシュボードへのアクセス
+
+本番環境ではIngressを介してダッシュボードを介して Prometheus、Alertmanager、Grafana のPodに接続します。
+
+一方で開発環境のMinikube上では、Ingressを介さずに、これらのPodに直接的に接続します。
+
+```bash
+$ kubectl port-forward svc/kube-prometheus-stack-prometheus -n prometheus 9090:9090
+
+$ kubectl port-forward svc/kube-prometheus-stack-alertmanager -n prometheus 9093:9093
+
+# ユーザ名: admin
+# パスワード: prom-operator
+$ kubectl port-forward svc/kube-prometheus-stack-grafana -n prometheus 8000:80
+```
+
+<br> 
+
+### Kiali
+
+本番環境ではIngressを介してダッシュボードを介して Kiali のPodに接続します。
+
+一方で開発環境のMinikube上では、Ingressを介さずに、KialiのPodに直接的に接続します。
+
+```bash
+$ kubectl port-forward svc/kiali 20001:20001 -n istio-system
+```
+
+<br>
