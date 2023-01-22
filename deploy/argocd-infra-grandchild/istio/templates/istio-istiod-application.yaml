@@ -18,6 +18,16 @@ spec:
         pilot:
           nodeSelector:
             node.kubernetes.io/nodegroup: system
+        global:
+          proxy:
+            {{- /* Jaegerを使用するが、オプション名はZipkinである */}}
+            tracer: "zipkin"
+            logLevel: info
+          tracer:
+            zipkin:
+              {{- /* istio-proxyで収集したスパンをjaeger-collectorに送信する */}}
+              address: "jaeger-collector.observability:9411"
+
 
   destination:
     server: https://kubernetes.default.svc
