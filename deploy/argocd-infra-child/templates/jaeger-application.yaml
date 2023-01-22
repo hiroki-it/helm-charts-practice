@@ -19,7 +19,7 @@ spec:
         collector:
           service:
             zipkin:
-            port: 9411
+              port: 9411
           nodeSelector:
             node.kubernetes.io/nodegroup: system
         query:
