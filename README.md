@@ -102,7 +102,7 @@ $ asdf install
 Minikubeを起動します。
 
 ```bash
-$ minikube start --memory 12288 --cpus 8 --nodes 5
+$ minikube start --memory 12288 --cpus 8 --nodes 5 --container-runtime=containerd
 ```
 
 #### ▼ コンテキスト
