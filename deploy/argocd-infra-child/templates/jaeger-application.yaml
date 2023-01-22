@@ -28,6 +28,18 @@ spec:
             ingressClassName: nginx
           nodeSelector:
             node.kubernetes.io/nodegroup: system
+        cassandra:
+          {{- /* EmptyDirではなく、PersistentVolumeを使用する */}}
+          persistence:
+           enabled: true
+        schema:
+          {{- /* Cassandraに環境変数を設定する */}}
+          {{- /* https://github.com/jaegertracing/jaeger/blob/main/plugin/storage/cassandra/schema/create.sh */}}
+          extraEnv:
+            - name: "MODE"
+              value: "prod"
+            - name: "TRACE_TTL"
+              value: "300"
 
   destination:
     server: https://kubernetes.default.svc
