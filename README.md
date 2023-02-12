@@ -165,7 +165,7 @@ $ helmfile -e dev -f helmfile.d/argocd-apps.yaml apply
 
 #### ▼ ダッシュボードへのアクセス
 
-本番環境ではIngressを介してダッシュボードを介してArgoCDのPodに接続します。
+本番環境では、Ingressを介してダッシュボードのPodに接続します。
 
 一方で開発環境のMinikube上では、Ingressを介さずに、ArgoCDのPodに直接的に接続します。
 
@@ -179,7 +179,7 @@ $ kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 #### ▼ ダッシュボードへのアクセス
 
-本番環境ではIngressを介してダッシュボードを介して Prometheus、Alertmanager、Grafana のPodに接続します。
+本番環境では、Ingressを介してダッシュボードのPodに接続します。
 
 一方で開発環境のMinikube上では、Ingressを介さずに、これらのPodに直接的に接続します。
 
@@ -197,7 +197,7 @@ $ kubectl port-forward svc/kube-prometheus-stack-grafana -n prometheus 8000:80
 
 ### Kiali
 
-本番環境ではIngressを介してダッシュボードを介して Kiali のPodに接続します。
+本番環境では、Ingressを介してダッシュボードのPodに接続します。
 
 一方で開発環境のMinikube上では、Ingressを介さずに、KialiのPodに直接的に接続します。
 
@@ -210,9 +210,9 @@ $ kubectl port-forward svc/kiali 20001:20001 -n istio-system
 ### Jaeger
 
 
-本番環境ではIngressを介してダッシュボードを介して Jaeger のPodに接続します。
+本番環境では、Ingressを介してダッシュボードのPodに接続します。
 
-一方で開発環境のMinikube上では、Ingressを介さずに、KialiのPodに直接的に接続します。
+一方で開発環境のMinikube上では、Ingressを介さずに、JaegerのPodに直接的に接続します。
 
 ```bash
 $ kubectl port-forward svc/jaeger-query 8081:80 -n jaeger
