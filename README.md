@@ -206,3 +206,16 @@ $ kubectl port-forward svc/kiali 20001:20001 -n istio-system
 ```
 
 <br>
+
+### Jaeger
+
+
+本番環境ではIngressを介してダッシュボードを介して Jaeger のPodに接続します。
+
+一方で開発環境のMinikube上では、Ingressを介さずに、KialiのPodに直接的に接続します。
+
+```bash
+$ kubectl port-forward svc/jaeger-query 8081:80 -n jaeger
+```
+
+<br>
