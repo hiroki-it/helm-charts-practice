@@ -101,7 +101,7 @@ $ asdf install
 valuesファイルの実装に基づいて、READMEを更新します。
 
 ```bash
-$ helm-docs -f values-dev.yaml -f values-prd.yaml
+$ helm-docs -f values-prd.yaml
 ```
 
 <br>
