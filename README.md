@@ -88,8 +88,20 @@ argocd-server        1/1     1            1           41h
 
 ### ツールのインストール
 
+asdfを使用して、ツールを一通りインストールします。
+
 ```bash
 $ asdf install
+```
+
+<br>
+
+### READMEの更新
+
+valuesファイルの実装に基づいて、READMEを更新します。
+
+```bash
+$ helm-docs -f values-dev.yaml -f values-prd.yaml
 ```
 
 <br>
