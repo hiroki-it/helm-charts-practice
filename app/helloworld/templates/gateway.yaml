@@ -14,4 +14,4 @@ spec:
         number: {{ .Values.ingressGateway.port }}
         protocol: TCP
       hosts:
-        - helloworld-service.app.svc.cluster.local
+        - {{ .Values.global.serviceName }}-service.app.svc.cluster.local
