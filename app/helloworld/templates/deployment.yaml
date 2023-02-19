@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: {{ .Values.global.serviceName }}
-          image: paulbouwer/hello-kubernetes:1.10
+          image: nginx:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
