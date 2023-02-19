@@ -7,8 +7,8 @@ metadata:
     app.kubernetes.io/env: {{ .Values.global.env }}
 spec:
   selector:
-    app: nginx
+    app: helloworld
   ports:
     - protocol: TCP
-      port: 8080
+      port: 8000
       targetPort: 80
