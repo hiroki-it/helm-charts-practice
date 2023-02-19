@@ -33,8 +33,6 @@ spec:
             zipkin:
               {{- /* istio-proxyで収集したスパンをjaeger-collectorに送信する */}}
               address: "jaeger-collector.observability:9411"
-
-
   destination:
     server: https://kubernetes.default.svc
     namespace: istio-system
