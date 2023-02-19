@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: helloworld
-          image: nginx:latest
+          image: paulbouwer/hello-kubernetes:1.10
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
