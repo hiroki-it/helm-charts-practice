@@ -1,0 +1,12 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: helloworld-destination-rule
+  namespace: app
+  labels:
+    app.kubernetes.io/env: {{ .Values.global.env }}
+spec:
+  host: helloworld-service.app.svc.cluster.local
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
