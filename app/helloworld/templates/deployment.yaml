@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: helloworld-deployment
+  name: {{ .Values.global.serviceName }}-deployment
   namespace: app
   labels:
     app.kubernetes.io/env: {{ .Values.global.env }}
@@ -9,14 +9,14 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: helloworld
+      app: {{ .Values.global.serviceName }}
   template:
     metadata:
       labels:
-        app: helloworld
+        app: {{ .Values.global.serviceName }}
     spec:
       containers:
-        - name: helloworld
+        - name: {{ .Values.global.serviceName }}
           image: paulbouwer/hello-kubernetes:1.10
           imagePullPolicy: IfNotPresent
           ports:

@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: helloworld-gateway
+  name: {{ .Values.global.serviceName }}-gateway
   namespace: app
   labels:
     app.kubernetes.io/env: {{ .Values.global.env }}
@@ -10,8 +10,8 @@ spec:
     istio: ingressgateway
   servers:
     - port:
-        name: http-helloworld
-        number: 80
-        protocol: 80
+        name: http-{{ .Values.global.serviceName }}
+        number: {{ .Values.ingressGateway.port }}
+        protocol: {{ .Values.ingressGateway.port }}
       hosts:
         - helloworld-service.app.svc.cluster.local

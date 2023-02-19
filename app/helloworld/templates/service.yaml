@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: helloworld-service
+  name: {{ .Values.global.serviceName }}-service
   namespace: app
   labels:
     app.kubernetes.io/env: {{ .Values.global.env }}
 spec:
   selector:
-    app: helloworld
+    app: {{ .Values.global.serviceName }}
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
+      port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}

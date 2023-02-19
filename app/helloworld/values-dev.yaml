@@ -1,2 +1,9 @@
 global:
   env: dev
+  serviceName: helloworld
+
+service:
+  port: 80
+
+ingressGateway:
+  port: 80

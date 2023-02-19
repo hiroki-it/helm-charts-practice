@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
-  name: helloworld-virtual-service
+  name: {{ .Values.global.serviceName }}-virtual-service
   namespace: app
   labels:
     app.kubernetes.io/env: {{ .Values.global.env }}
@@ -9,13 +9,13 @@ spec:
   hosts:
     - "*"
   gateways:
-    - helloworld-gateway
+    - {{ .Values.global.serviceName }}-gateway
   http:
     - match:
-        - port: 80
+        - port: {{ .Values.ingressGateway.port }}
       route:
         - destination:
-            host: helloworld-service.app.svc.cluster.local
+            host: {{ .Values.global.serviceName }}-service.app.svc.cluster.local
             port:
-              number: 80
+              number: {{ .Values.ingressGateway.port }}
 
