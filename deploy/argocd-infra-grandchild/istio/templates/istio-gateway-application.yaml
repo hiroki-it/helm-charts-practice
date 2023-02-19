@@ -17,7 +17,7 @@ spec:
         service:
           type: NodePort
           ports:
-            - name: http
+            - name: http-helloworld
               port: 80
               targetPort: 80
               nodePort: 31039
