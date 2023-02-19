@@ -13,7 +13,7 @@ spec:
     targetRevision: 1.15.4
     helm:
       {{- /* カナリアリリース時に並行稼働させるため、リリース名にリビジョン番号を設定する */}}
-      releaseName: istio-istiod-1.15.4
+      releaseName: istio-istiod-1-15-4
       values: |
         revision: "1-15-4"
         {{- /* リビジョン値をエイリアスで管理する */}}
