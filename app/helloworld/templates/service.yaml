@@ -9,7 +9,7 @@ spec:
   selector:
     app: {{ .Values.global.serviceName }}
   ports:
-    - name: http-helloworld
+    - name: http-{{ .Values.global.serviceName }}
       protocol: TCP
       port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.port }}
