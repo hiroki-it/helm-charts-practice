@@ -9,5 +9,4 @@ spec:
   host: {{ .Values.global.serviceName }}-service.app.svc.cluster.local
   trafficPolicy:
     tls:
-      {{/* 簡略化のため、相互TLSは無効化しておく */}}
-      mode: DISABLE
+      mode: ISTIO_MUTUAL
