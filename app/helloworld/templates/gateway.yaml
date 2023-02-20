@@ -14,4 +14,4 @@ spec:
         number: {{ .Values.ingressGateway.port }}
         protocol: HTTP
       hosts:
-        - {{ .Values.global.serviceName }}-service.app.svc.cluster.local
+        - "*"
