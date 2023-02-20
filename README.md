@@ -133,6 +133,7 @@ istio-ingressgatewayのServiceは、NodePort Serviceとして設計していま�
 
 ```bash
 $ minikube service --url istio-ingressgateway -n istio-ingress
+
 http://127.0.0.1:57774
 ```
 
