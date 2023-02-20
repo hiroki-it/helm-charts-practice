@@ -13,7 +13,7 @@ spec:
     targetRevision: {{ .Values.application.dottedRevision }}
     helm:
       {{- /* カナリアリリース時に並行稼働させるため、リリース名にリビジョン番号を設定する */}}
-      releaseName: istio-istiod-{{ .Values.application.hyphenatedRevision }}
+      releaseName: istio-istiod
       values: |
         revision: "{{ .Values.application.hyphenatedRevision }}"
         {{- /* リビジョン値をエイリアスで管理する */}}
