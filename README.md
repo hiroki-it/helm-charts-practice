@@ -151,7 +151,7 @@ content-length: 800
 etag: W/"320-IKpy7WdeRlEJz8JSkGbdha/Cq88"
 date: Mon, 20 Feb 2023 09:49:37 GMT
 x-envoy-upstream-service-time: 379
-server: istio-envoy
+server: istio-envoy # これ！！
 ```
 
 <br>
