@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   namespace: argocd
-  name: istio-istiod-application
+  name: istio-istiod-{{ .Values.application.hyphenatedRevision }}-application
   labels:
     app.kubernetes.io/env: {{ .Values.global.env }}
 spec:
@@ -10,12 +10,12 @@ spec:
   source:
     repoURL: https://istio-release.storage.googleapis.com/charts
     chart: istiod
-    targetRevision: 1.15.4
+    targetRevision: {{ .Values.application.dottedRevision }}
     helm:
       {{- /* カナリアリリース時に並行稼働させるため、リリース名にリビジョン番号を設定する */}}
-      releaseName: istio-istiod-1-15-4
+      releaseName: istio-istiod-{{ .Values.application.hyphenatedRevision }}
       values: |
-        revision: "1-15-4"
+        revision: "{{ .Values.application.hyphenatedRevision }}"
         {{- /* リビジョン値をエイリアスで管理する */}}
         revisionTags:
           - "stable"

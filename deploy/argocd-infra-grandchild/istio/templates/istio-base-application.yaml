@@ -10,11 +10,11 @@ spec:
   source:
     repoURL: https://istio-release.storage.googleapis.com/charts
     chart: base
-    targetRevision: 1.15.4
+    targetRevision: {{ .Values.application.dottedRevision }}
     helm:
       releaseName: istio-base
       values: |
-        defaultRevision: "1-15-4"
+        defaultRevision: "{{ .Values.application.hyphenatedRevision }}"
   destination:
     server: https://kubernetes.default.svc
     namespace: istio-system
