@@ -2,6 +2,9 @@ global:
   env: dev
   serviceName: helloworld
 
+deployment:
+  containerPort: 8080
+
 service:
   port: 80
 

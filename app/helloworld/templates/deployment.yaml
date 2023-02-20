@@ -20,7 +20,7 @@ spec:
           image: nginx:latest
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 80
+            - containerPort: {{ .Values.deployment.containerPort }}
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
