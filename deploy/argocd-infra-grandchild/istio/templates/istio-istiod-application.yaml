@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   namespace: argocd
-  name: istio-istiod-{{ .Values.application.hyphenatedRevision }}-application
+  name: istio-istiod-application
   labels:
     app.kubernetes.io/env: {{ .Values.global.env }}
 spec:
