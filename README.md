@@ -24,6 +24,9 @@
 repository/
 ├── README.md
 ├── app # アプリ領域のマイクロサービスごとのユーザ定義チャートを配置
+│   ├── shared  # インフラ領域で各ツールが共有するKubernetesリソース (例：Namespace)
+│   ...
+│
 ├── deploy
 │   ├── argocd-app-child         # ArgoCDのアプリ領域の子Applicationを配置
 │   ├── argocd-infra-child       # ArgoCDのインフラ領域の子Applicationを配置
@@ -32,6 +35,8 @@ repository/
 │   └── argocd-root              # ArgoCDのルートApplicationを配置
 │
 └── infra # インフラ領域のツールごとのユーザ定義チャートを配置
+    ├── shared  # インフラ領域で各ツールが共有するKubernetesリソース (例：Namespace)
+    ...
 ```
 
 <br>
