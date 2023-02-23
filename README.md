@@ -122,41 +122,6 @@ $ asdf install
 
 <br>
 
-### アプリケーションへの接続
-
-アプリケーションには [Hello Kubernetes!
-](https://github.com/paulbouwer/hello-kubernetes) を採用しています。
-
-istio-ingressgatewayのServiceは、NodePort Serviceとして設計しています。
-
-そのため、```minikube service```コマンドから取得できるURLでアプリケーションに接続できます。
-
-```bash
-$ minikube service --url istio-ingressgateway -n istio-ingress
-
-http://127.0.0.1:57774
-```
-
-アプリケーションに正しく接続できていれば、以下のような画面が表示されます。
-
-![hello-kubernetes](https://raw.githubusercontent.com/paulbouwer/hello-kubernetes/main/hello-kubernetes.png)
-
-また、レスポンスヘッダーの```server```キーから、```istio-proxy```コンテナを経由できていることを確認できます。
-
-```yaml
-HTTP/1.1 200 OK
----
-x-powered-by: Express
-content-type: text/html; charset=utf-8
-content-length: 800
-etag: W/"320-IKpy7WdeRlEJz8JSkGbdha/Cq88"
-date: Mon, 20 Feb 2023 09:49:37 GMT
-x-envoy-upstream-service-time: 379
-server: istio-envoy # これ！！
-```
-
-<br>
-
 ### チャート仕様書の更新
 
 ```helm-docs```コマンドを使用して、チャート仕様書の更新を自動的に更新します。
@@ -246,6 +211,42 @@ $ helmfile -e dev -f helmfile.d/argocd-apps.yaml apply
 
 ```bash
 $ kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+
+<br>
+
+
+### アプリケーションへの接続
+
+アプリケーションには [Hello Kubernetes!
+](https://github.com/paulbouwer/hello-kubernetes) を採用しています。
+
+istio-ingressgatewayのServiceは、NodePort Serviceとして設計しています。
+
+そのため、```minikube service```コマンドから取得できるURLでアプリケーションに接続できます。
+
+```bash
+$ minikube service --url istio-ingressgateway -n istio-ingress
+
+http://127.0.0.1:57774
+```
+
+アプリケーションに正しく接続できていれば、以下のような画面が表示されます。
+
+![hello-kubernetes](https://raw.githubusercontent.com/paulbouwer/hello-kubernetes/main/hello-kubernetes.png)
+
+また、レスポンスヘッダーの```server```キーから、```istio-proxy```コンテナを経由できていることを確認できます。
+
+```yaml
+HTTP/1.1 200 OK
+---
+x-powered-by: Express
+content-type: text/html; charset=utf-8
+content-length: 800
+etag: W/"320-IKpy7WdeRlEJz8JSkGbdha/Cq88"
+date: Mon, 20 Feb 2023 09:49:37 GMT
+x-envoy-upstream-service-time: 379
+server: istio-envoy # これ！！
 ```
 
 <br>
