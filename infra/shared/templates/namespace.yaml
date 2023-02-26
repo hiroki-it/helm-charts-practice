@@ -14,7 +14,7 @@ metadata:
   name: istio-ingress
   labels:
     # istio-proxyコンテナのインジェクションを有効化する。
-    istio.io/rev: stable
+    istio.io/rev: default
 ---
 apiVersion: v1
 kind: Namespace

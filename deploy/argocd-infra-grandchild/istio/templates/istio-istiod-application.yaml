@@ -18,7 +18,7 @@ spec:
         revision: "{{ .Values.application.hyphenatedRevision }}"
         {{- /* リビジョン値をエイリアスで管理する */}}
         revisionTags:
-          - "stable"
+          - "default"
         pilot:
           {{- /* 全てのトラフィックでスパンを作成する */}}
           traceSampling: 100.0
