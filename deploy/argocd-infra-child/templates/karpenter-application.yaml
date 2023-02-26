@@ -7,6 +7,9 @@ metadata:
     app.kubernetes.io/env: {{ .Values.global.env }}
 spec:
   project: infra
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: karpenter
   source:
     repoURL: oci://public.ecr.aws/karpenter/karpenter
     chart: karpenter
