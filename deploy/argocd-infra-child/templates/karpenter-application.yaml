@@ -1,3 +1,5 @@
+{{/* karpenterはMinikubeで使用できないため、デプロイしない */}}
+{{- if not .Values.global.env "dev" }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -24,3 +26,4 @@ spec:
           aws:
             clusterName: "foo-eks-cluster"
             clusterEndpoint: "https://*****"
+{{- end }}
