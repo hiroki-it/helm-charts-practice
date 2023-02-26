@@ -11,9 +11,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: karpenter
   source:
-    repoURL: oci://public.ecr.aws/karpenter/karpenter
+    repoURL: https://charts.karpenter.sh/
     chart: karpenter
-    targetRevision: v0.25.0
+    targetRevision: 0.16.3
     helm:
       releaseName: karpenter
       values: |
