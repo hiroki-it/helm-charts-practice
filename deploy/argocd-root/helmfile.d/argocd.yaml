@@ -12,5 +12,6 @@ releases:
       - ../charts/argocd/values.yaml.gotmpl
 
 environments:
-  prd:
-  dev:
+    {{.Environment.Name}}:
+      values:
+        - ../charts/argocd/values.yaml

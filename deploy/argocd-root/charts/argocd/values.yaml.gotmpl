@@ -28,8 +28,8 @@ configs:
           id: github
           name: argocd-sso
           config:
-            clientID: *****
-            clientSecret: *****
+            clientID: {{ .Values.configs.clientId }}
+            clientSecret: {{ .Values.configs.clientSecret }}
   rbac:
     policy.default: role:readonly
     policy.csv: |
