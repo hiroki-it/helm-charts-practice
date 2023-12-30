@@ -1,6 +1,9 @@
 # バージョン
 KUBERNETES_VERSION := 1.28.0
 
+# パス
+PROJECT_DIR := $(shell dirname $(shell pwd))
+
 # Minikubeを初期化します．
 .PHONY: init
 init:
