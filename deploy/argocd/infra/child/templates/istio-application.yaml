@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/hiroki-it/helm-charts-practice.git
     targetRevision: main
-    path: ./deploy/infra/grandchild/istio
+    path: ./deploy/argocd/infra/grandchild/istio
     helm:
       releaseName: istio
       valueFiles:
