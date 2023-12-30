@@ -33,4 +33,4 @@ load-test-order:
 # Minikubeを削除します．
 .PHONY: clean
 clean:
-	minikube delete
+	minikube delete --all --purge
