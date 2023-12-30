@@ -2,5 +2,5 @@ global:
   env: prd
 
 application:
-  dottedRevision: 1.15.4
-  hyphenatedRevision: 1-15-4
+  dottedRevision: 1.19.5
+  hyphenatedRevision: 1-19-5
