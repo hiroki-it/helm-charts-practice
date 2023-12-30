@@ -8,6 +8,7 @@ PROJECT_DIR := $(shell dirname $(shell pwd))
 .PHONY: init
 init:
 	minikube start \
+		--container-runtime=containerd \
 		--driver=docker \
 		--mount=true \
 		--mount-string="${PROJECT_DIR}/microservices-backend:/data" \
