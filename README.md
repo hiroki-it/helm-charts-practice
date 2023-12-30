@@ -146,11 +146,17 @@ Minikubeを起動します。
 CPUとメモリの要求量は任意で変更します。
 
 ```bash
+# バージョン
+$ KUBERNETES_VERSION=1.28.5
+
+# パス
+$ PROJECT_DIR=$(dirname $(pwd))
+
 $ minikube start \
     --nodes 5 \
     --container-runtime=containerd \
-	--driver=docker \
-	--mount=true \
+    --driver=docker \
+    --mount=true \
 	--mount-string="${PROJECT_DIR}/microservices-backend:/data" \
 	--kubernetes-version=v${KUBERNETES_VERSION} \
 	--cpus=8 \
