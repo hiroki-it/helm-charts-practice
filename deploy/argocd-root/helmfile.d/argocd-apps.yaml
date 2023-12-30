@@ -6,7 +6,7 @@ releases:
   - name: argocd-apps
     namespace: argocd
     chart: argo-helm/argocd-apps
-    version: 0.0.6
+    version: 1.4.1
     atomic: true
     values:
       - ../charts/argocd-apps/values.yaml.gotmpl
