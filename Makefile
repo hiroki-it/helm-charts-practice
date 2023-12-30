@@ -1,5 +1,5 @@
 # バージョン
-KUBERNETES_VERSION := 1.23.5
+KUBERNETES_VERSION := 1.28.0
 
 # Minikubeを初期化します．
 .PHONY: init
