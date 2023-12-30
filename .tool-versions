@@ -1,4 +1,4 @@
-helmfile 0.144.0
+helmfile 0.160.0
 helm-docs 1.11.0
 istioctl 1.15.4
 minikube 1.32.0
