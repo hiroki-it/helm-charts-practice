@@ -75,13 +75,7 @@ repository/
 
 ArgoCDでは、[App-Of-Appsパターン](https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern)を採用しており、以下のようなApplication構成になっています。
 
-```yaml
-argocd-root
-├── argocd-app-parent # アプリチームのマイクロサービスごとのチャートをデプロイできる。
-└── argocd-infra-parent # インフラチームのツールごとのチャートをデプロイできる
-```
-
-ArgoCDのルートApplication（argocd-root）のみ、ArgoCDを使用してデプロイできないため、Helmfileを使用しています。
+ArgoCDのルートApplicationのみ、ArgoCDを使用してデプロイできないため、Helmfileを使用しています。
 
 
 #### ▼ プロジェクト
