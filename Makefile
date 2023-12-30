@@ -1,5 +1,5 @@
 # バージョン
-KUBERNETES_VERSION := 1.28.0
+KUBERNETES_VERSION := 1.28.5
 
 # パス
 PROJECT_DIR := $(shell dirname $(shell pwd))
