@@ -44,19 +44,23 @@
 ```yaml
 repository/
 ├── README.md
-├── app # アプリ領域のマイクロサービスごとのユーザ定義チャートを配置
-│   ├── shared  # インフラ領域で各ツールが共有するKubernetesリソース (例：Namespace)
+├── app
+│   ├── account # Accountサービスが占有するKubernetesリソース (例：Deployment)
+│   ├── shared # 各マイクロサービスが共有するKubernetesリソース (例：Namespace)
 │   ...
 │
 ├── deploy
-│   ├── argocd-app-child         # ArgoCDのアプリ領域の子Applicationを配置
-│   ├── argocd-infra-child       # ArgoCDのインフラ領域の子Applicationを配置
-│   ├── argocd-infra-grandchild  # ArgoCDのインフラ領域の孫Applicationを配置
-│   ├── argocd-parent            # ArgoCDの親Applicationを配置
-│   └── argocd-root              # ArgoCDのルートApplicationを配置
+│   ├── argocd
+│   │   ├── app # アプリチームの占有Applicationを配置
+│   │   ├── infra # インフラチムの占有Applicationを配置
+│   │   └── shared # 全チームの共有Applicationを配置
+│   │       ├── parent # 親Applicationを配置
+│   │       └── root # ルートApplicationを配置
+│   │
+│   ...
 │
-└── infra # インフラ領域のツールごとのユーザ定義チャートを配置
-    ├── shared  # インフラ領域で各ツールが共有するKubernetesリソース (例：Namespace)
+└── infra # インフラチームのツールごとのユーザ定義チャートを配置
+    ├── shared  # インフラチームで各ツールが共有するKubernetesリソース (例：Namespace)
     ...
 ```
 
@@ -73,8 +77,8 @@ ArgoCDでは、[App-Of-Appsパターン](https://argo-cd.readthedocs.io/en/stabl
 
 ```yaml
 argocd-root
-├── argocd-app-parent # アプリ領域のマイクロサービスごとのチャートをデプロイできる。
-└── argocd-infra-parent # インフラ領域のツールごとのチャートをデプロイできる
+├── argocd-app-parent # アプリチームのマイクロサービスごとのチャートをデプロイできる。
+└── argocd-infra-parent # インフラチームのツールごとのチャートをデプロイできる
 ```
 
 ArgoCDのルートApplication（argocd-root）のみ、ArgoCDを使用してデプロイできないため、Helmfileを使用しています。
