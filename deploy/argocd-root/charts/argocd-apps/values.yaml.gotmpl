@@ -2,7 +2,7 @@ applications:
   - name: root-application
     namespace: argocd
     additionalLabels:
-      app.kubernetes.io/env: {{ .Environment.Name }}
+      env: {{ .Environment.Name }}
     project: root
     source:
       repoURL: https://github.com/hiroki-it/kubernetes-network-practice.git
@@ -21,7 +21,7 @@ projects:
   - name: root
     namespace: argocd
     additionalLabels:
-      app.kubernetes.io/env: {{ .Environment.Name }}
+      env: {{ .Environment.Name }}
     description: This is root project
     sourceRepos:
       - '*'
@@ -34,7 +34,7 @@ projects:
   - name: app
     namespace: argocd
     additionalLabels:
-      app.kubernetes.io/env: {{ .Environment.Name }}
+      env: {{ .Environment.Name }}
     description: This is app project
     sourceRepos:
       - '*'
@@ -47,7 +47,7 @@ projects:
   - name: infra
     namespace: argocd
     additionalLabels:
-      app.kubernetes.io/env: {{ .Environment.Name }}
+      env: {{ .Environment.Name }}
     description: This is infra project
     sourceRepos:
       - '*'

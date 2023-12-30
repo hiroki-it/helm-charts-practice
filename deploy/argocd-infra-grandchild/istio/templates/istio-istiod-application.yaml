@@ -4,7 +4,7 @@ metadata:
   namespace: argocd
   name: istio-istiod-application
   labels:
-    app.kubernetes.io/env: {{ .Values.global.env }}
+    env: {{ .Values.global.env }}
 spec:
   project: infra
   source:

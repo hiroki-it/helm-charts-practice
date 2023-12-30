@@ -1,0 +1,3 @@
+{{- if eq .Values.general.env "dev" }}
+  {{- include "dev.customer.db.persistent-volume" . }}
+{{- end }}

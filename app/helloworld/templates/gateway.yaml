@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.global.serviceName }}-gateway
   namespace: app
   labels:
-    app.kubernetes.io/env: {{ .Values.global.env }}
+    env: {{ .Values.global.env }}
 spec:
   selector:
     istio: ingressgateway

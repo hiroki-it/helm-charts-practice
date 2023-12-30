@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.global.serviceName }}-destination-rule
   namespace: app
   labels:
-    app.kubernetes.io/env: {{ .Values.global.env }}
+    env: {{ .Values.global.env }}
 spec:
   host: {{ .Values.global.serviceName }}-service.app.svc.cluster.local
   trafficPolicy:

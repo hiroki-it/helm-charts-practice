@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.global.serviceName }}-virtual-service
   namespace: app
   labels:
-    app.kubernetes.io/env: {{ .Values.global.env }}
+    env: {{ .Values.global.env }}
 spec:
   hosts:
     - "*"

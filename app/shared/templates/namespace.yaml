@@ -5,4 +5,4 @@ metadata:
   labels:
     # istio-proxyコンテナのインジェクションを有効化する。
     istio.io/rev: default
-    app.kubernetes.io/env: {{ .Values.global.env }}
+    env: {{ .Values.global.env }}

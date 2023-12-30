@@ -6,7 +6,7 @@ metadata:
   namespace: argocd
   name: karpenter-application
   labels:
-    app.kubernetes.io/env: {{ .Values.global.env }}
+    env: {{ .Values.global.env }}
 spec:
   project: infra
   destination:

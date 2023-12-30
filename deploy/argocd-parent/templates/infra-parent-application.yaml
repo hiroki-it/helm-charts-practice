@@ -4,7 +4,7 @@ metadata:
   namespace: argocd
   name: infra-parent-application
   labels:
-    app.kubernetes.io/env: {{ .Values.global.env }}
+    env: {{ .Values.global.env }}
 spec:
   project: infra
   source:

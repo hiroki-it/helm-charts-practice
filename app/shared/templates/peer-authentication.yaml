@@ -1,0 +1,10 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  namespace: app
+  name: peer-authentication
+  labels:
+      env: {{ .Values.general.env }}
+spec:
+  mtls:
+    mode: DISABLE

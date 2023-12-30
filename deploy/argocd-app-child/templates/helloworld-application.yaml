@@ -4,7 +4,7 @@ metadata:
   namespace: argocd
   name: helloworld-application
   labels:
-    app.kubernetes.io/env: {{ .Values.global.env }}
+    env: {{ .Values.global.env }}
 spec:
   project: app
   source:

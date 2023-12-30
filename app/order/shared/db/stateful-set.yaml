@@ -1,0 +1,3 @@
+{{- if eq .Values.general.env "dev" }}
+  {{- include "dev.order.db.stateful-set" . }}
+{{- end }}

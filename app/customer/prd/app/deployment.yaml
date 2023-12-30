@@ -1,0 +1,10 @@
+{{- define "prd.customer.app.deployment" }}
+      hostname: customer-app-pod
+      containers:
+        # FastAPIコンテナ
+        - name: fastapi
+          image: {{ .Values.aws.accountId }}.dkr.ecr.{{ .Values.aws.region }}.amazonaws.com/customer-fastapi-repository:{{ .Values.image.customer.fastapi }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+{{- end }}
