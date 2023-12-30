@@ -1,3 +1,3 @@
-{{- if eq .Values.general.env "dev" }}
+{{- if eq .Values.global.env "dev" }}
   {{- include "dev.orchestrator.app.persistent-volume-claim" . }}
 {{- end }}

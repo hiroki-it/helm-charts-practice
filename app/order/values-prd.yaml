@@ -1,4 +1,4 @@
-general:
+global:
   env: prd
 aws:
   accountId: null

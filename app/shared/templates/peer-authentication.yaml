@@ -4,7 +4,7 @@ metadata:
   namespace: app
   name: peer-authentication
   labels:
-      env: {{ .Values.general.env }}
+      env: {{ .Values.global.env }}
 spec:
   mtls:
     mode: DISABLE

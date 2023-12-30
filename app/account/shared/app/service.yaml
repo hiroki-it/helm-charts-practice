@@ -6,7 +6,7 @@ metadata:
   labels:
     app: account
     component: app
-    env: {{ .Values.general.env }}
+    env: {{ .Values.global.env }}
 spec:
   type: ClusterIP
   selector:

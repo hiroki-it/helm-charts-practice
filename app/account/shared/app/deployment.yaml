@@ -6,7 +6,7 @@ metadata:
   labels:
     app: account
     component: app
-    env: {{ .Values.general.env }}
+    env: {{ .Values.global.env }}
 spec:
   replicas: 1
   revisionHistoryLimit: 5
@@ -19,17 +19,17 @@ spec:
     matchLabels:
       app: account
       component: app
-      env: {{ .Values.general.env }}
+      env: {{ .Values.global.env }}
   template:
     metadata:
       labels:
         app: account
         component: app
-        env: {{ .Values.general.env }}
+        env: {{ .Values.global.env }}
     spec:
-{{- if eq .Values.general.env "dev" }}
+{{- if eq .Values.global.env "dev" }}
   {{- include "dev.account.app.deployment" . }}
 {{- end }}
-{{- if eq .Values.general.env "prd" }}
+{{- if eq .Values.global.env "prd" }}
   {{- include "prd.account.app.deployment" . }}
 {{- end }}

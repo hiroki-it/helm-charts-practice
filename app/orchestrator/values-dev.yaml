@@ -1,4 +1,4 @@
-general:
+global:
   env: dev
 aws:
   accountId: null
