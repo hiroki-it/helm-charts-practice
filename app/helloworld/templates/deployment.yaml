@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.global.serviceName }}-deployment
-  namespace: app
+  namespace: services
   labels:
     env: {{ .Values.global.env }}
 spec:

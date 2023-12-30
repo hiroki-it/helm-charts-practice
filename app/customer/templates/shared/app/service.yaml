@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: microservices
+  namespace: services
   name: customer-app-service
   labels:
     app: customer
