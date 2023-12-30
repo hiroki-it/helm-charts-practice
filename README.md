@@ -147,10 +147,14 @@ CPUとメモリの要求量は任意で変更します。
 
 ```bash
 $ minikube start \
-    --memory 12288 \
-    --cpus 8 \
     --nodes 5 \
-    --container-runtime=containerd
+    --container-runtime=containerd \
+	--driver=docker \
+	--mount=true \
+	--mount-string="${PROJECT_DIR}/microservices-backend:/data" \
+	--kubernetes-version=v${KUBERNETES_VERSION} \
+	--cpus=8 \
+	--memory=12288
 ```
 
 #### ▼ コンテキスト
@@ -164,7 +168,6 @@ $ kubectx minikube
 #### ▼ ワーカーNodeの種類分け
 
 node affinityのために、ワーカーNodeの```metadata.labels```キー配下にNodeの種類を表すラベルを付与します。
-
 
 ```bash
 # minikube-m01はコントロールプレーンNodeのため、ラベルを付与しない。
@@ -182,6 +185,14 @@ Minikube仮想サーバーにツールをインストールします。
 
 ```bash
 $ minikube ssh -- "sudo apt-get update -y && sudo apt-get install -y tcptraceroute"
+```
+
+#### ▼ 削除
+
+Minikubeを完全に削除します。
+
+```bash
+$ minikube delete --all --purge
 ```
 
 <br>
